@@ -23,43 +23,35 @@
 #################################################################
 
 ###  http://purl.obolibrary.org/obo/BFO_0000057
-obo:BFO_0000057 rdf:type owl:AnnotationProperty ;
-                rdfs:subPropertyOf gist:hasParticipant .
+obo:BFO_0000057 rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000063
-obo:BFO_0000063 rdf:type owl:AnnotationProperty ;
-                rdfs:subPropertyOf gist:precedes .
+obo:BFO_0000063 rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000066
-obo:BFO_0000066 rdf:type owl:AnnotationProperty ;
-                rdfs:subPropertyOf gist:occursIn .
+obo:BFO_0000066 rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000084
-obo:BFO_0000084 rdf:type owl:AnnotationProperty ;
-                rdfs:subPropertyOf gist:isBasedOn .
+obo:BFO_0000084 rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000129
-obo:BFO_0000129 rdf:type owl:AnnotationProperty ;
-                rdfs:subPropertyOf gist:isMemberOf .
+obo:BFO_0000129 rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000132
-obo:BFO_0000132 rdf:type owl:AnnotationProperty ;
-                rdfs:subPropertyOf gist:isPartOf .
+obo:BFO_0000132 rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000176
-obo:BFO_0000176 rdf:type owl:AnnotationProperty ;
-                rdfs:subPropertyOf gist:isPartOf .
+obo:BFO_0000176 rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000194
-obo:BFO_0000194 rdf:type owl:AnnotationProperty ;
-                rdfs:subPropertyOf gist:isCategorizedBy .
+obo:BFO_0000194 rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#bfoMappingNote
@@ -103,6 +95,42 @@ gist:occursIn rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/semanticarts/ns/ontology/gist/precedes
 gist:precedes rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000057
+obo:BFO_0000057 rdfs:subPropertyOf gist:hasParticipant .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000063
+obo:BFO_0000063 rdfs:subPropertyOf gist:precedes .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000066
+obo:BFO_0000066 rdfs:subPropertyOf gist:occursIn .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000084
+obo:BFO_0000084 rdfs:subPropertyOf gist:isBasedOn .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000129
+obo:BFO_0000129 rdfs:subPropertyOf gist:isMemberOf .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000132
+obo:BFO_0000132 rdfs:subPropertyOf gist:isPartOf .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000176
+obo:BFO_0000176 rdfs:subPropertyOf gist:isPartOf .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000194
+obo:BFO_0000194 rdfs:subPropertyOf gist:isCategorizedBy .
 
 
 #################################################################
@@ -192,7 +220,11 @@ gist:IntellectualProperty rdfs:subClassOf obo:BFO_0000002 ;
 
 
 ###  https://w3id.org/semanticarts/ns/ontology/gist/Intention
-gist:Intention rdfs:subClassOf obo:BFO_0000020 ;
+gist:Intention rdfs:subClassOf [ rdf:type owl:Class ;
+                                 owl:unionOf ( obo:BFO_0000020
+                                               obo:BFO_0000031
+                                             )
+                               ] ;
                gist:bfoMappingNote "It is to be determined whether this only holds for mental entities or it can work for, say, BFO:function" .
 
 
@@ -257,11 +289,7 @@ gist:SchemaMetaData rdfs:subClassOf obo:BFO_0000031 .
 
 
 ###  https://w3id.org/semanticarts/ns/ontology/gist/Specification
-gist:Specification rdfs:subClassOf [ rdf:type owl:Class ;
-                                     owl:unionOf ( obo:BFO_0000020
-                                                   obo:BFO_0000031
-                                                 )
-                                   ] ;
+gist:Specification rdfs:subClassOf obo:BFO_0000031 ;
                    gist:bfoMappingNote "Likely a CCO directive information content entity" .
 
 
